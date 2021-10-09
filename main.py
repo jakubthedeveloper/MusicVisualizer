@@ -5,6 +5,11 @@ from src.analyser import Analyser
 from src.modifier import Modifier
 from src.renderer import Renderer
 
+test_x = 0
+test_y = 0
+test_z = 0
+test_r = 0
+
 if len(sys.argv) != 2:
     print("Usage: python3 main.py <wave file>")
     quit()
@@ -35,6 +40,25 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        elif event.type == pygame.KEYUP:
+            if event.key == pygame.K_w:
+                test_y += 1
+            elif event.key == pygame.K_s:
+                test_y -= 1
+            elif event.key == pygame.K_a:
+                test_x -= 1
+            elif event.key == pygame.K_d:
+                test_x += 1
+            elif event.key == pygame.K_q:
+                test_z -= 0.5
+            elif event.key == pygame.K_e:
+                test_z += 0.5
+            elif event.key == pygame.K_z:
+                test_r -= 0.5
+            elif event.key == pygame.K_x:
+                test_r += 0.5
+
+            print (test_x, test_y, test_z, test_r)
 
     modifier.update(pygame.mixer.music.get_pos() / 1000.0)
     renderer.render(deltaTime)
