@@ -56,13 +56,12 @@ class Renderer:
         glPushMatrix()
         glTranslatef(0, 0, 0)
         quadric = gluNewQuadric()  # TODO: move to class property
-        gluSphere(quadric, 0.1 + self.modifier.values[1], 60, 20)
-        gluQuadricDrawStyle(quadric, GLU_FILL)
+        gluSphere(quadric, 0.5, int(20 * self.modifier.values[1]), 10)
         gluDeleteQuadric(quadric)
         glPopMatrix()
 
 
-    def render(self, dt):
+    def render(self, dt, test_x, test_y, test_z, test_r):
         glRotatef(10 * dt, 1, 0.5, 0.3)
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
         self.wire_cube(-1.8, 0, 0, 0.5, 0.5, 0.5)

@@ -42,17 +42,17 @@ while running:
             running = False
         elif event.type == pygame.KEYUP:
             if event.key == pygame.K_w:
-                test_y += 1
+                test_y += 0.1
             elif event.key == pygame.K_s:
-                test_y -= 1
+                test_y -= 0.1
             elif event.key == pygame.K_a:
-                test_x -= 1
+                test_x -= 0.1
             elif event.key == pygame.K_d:
-                test_x += 1
+                test_x += 0.1
             elif event.key == pygame.K_q:
-                test_z -= 0.5
+                test_z -= 0.1
             elif event.key == pygame.K_e:
-                test_z += 0.5
+                test_z += 0.1
             elif event.key == pygame.K_z:
                 test_r -= 0.5
             elif event.key == pygame.K_x:
@@ -61,6 +61,6 @@ while running:
             print (test_x, test_y, test_z, test_r)
 
     modifier.update(pygame.mixer.music.get_pos() / 1000.0)
-    renderer.render(deltaTime)
+    renderer.render(deltaTime, test_x, test_y, test_z, test_r)
 
 pygame.quit()
