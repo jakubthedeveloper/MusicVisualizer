@@ -2,7 +2,7 @@
 
 ## Install requirements
 ```
-pip install librosa pygame
+pip install librosa pygame PyOpenGL PyOpenGL_accelerate
 ```
 
 ## Usage
