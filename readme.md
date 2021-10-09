@@ -2,7 +2,7 @@
 
 ## Install requirements
 ```
-pip install librosa
+pip install librosa pygame
 ```
 
 ## Usage
